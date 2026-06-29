@@ -88,6 +88,10 @@ Review -> Changes Requested -> In Progress -> Evidence Check -> Review
 
 ## エージェント構成
 
+- 本LoopではB方式を採用する。Looper / Orchestratorは各エージェントの役割、起動条件、出力責務を前提知識として保持しているものとして扱う。
+- `agents/*.md` は役割定義の原本、監査基準、実装時の参照仕様であり、毎回サブエージェントへ読み込ませることを必須とはしない。
+- サブエージェントは次工程を提案できるが、起動可否とStatus変更はOrchestratorが判断する。
+
 - オーケストレーター
 - 要件定義エージェント
 - リサーチエージェント

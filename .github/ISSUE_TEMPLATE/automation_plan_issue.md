@@ -69,6 +69,8 @@ labels: "type:automation,evidence:required,agent:review-required"
 
 ## エージェント起動条件
 
+本LoopではB方式を採用する。Looper / Orchestratorは各エージェントの役割を前提知識として保持し、Issue内容とStatusから必要なサブエージェントを判断する。サブエージェントは次工程を提案できるが、自律的に別サブエージェントを起動しない。
+
 | エージェント | 起動条件 |
 |---|---|
 | オーケストレーター | 全Issue |
