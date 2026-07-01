@@ -31,16 +31,16 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #10 運営オペレーション素材L2レビュー済み / Integration Ready / PR #29 draft open |
+| current_phase | #11 収益・費用素材L2レビュー済み / Integration Ready / PR未作成 |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
-| current_branch | codex/issue-10-operations-l2 |
+| current_branch | codex/issue-11-revenue-cost-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-032 |
+| current_run_id | LOG-034 |
 | last_decision_by | Human / Orchestrator |
-| next_target | PR #29をpr_babysitterで監視する。merge後にIssue #10をcompleted closeし、次候補#11 収益・費用のL2開始可否を判断する |
-| resume_condition | PR #28はmainへmerge済み。Issue #9はcompleted close済み。#10 運営オペレーション素材はPR #29としてdraft open。Issue #10に `integration-ready` と `status: pr-ready` を付与済み。PR #29のmerge判断は人間に委ねる |
-| resume_owner | pr_babysitter / Human |
+| next_target | #11をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う |
+| resume_condition | PR #29はmainへmerge済み。Issue #10はcompleted close済み。#11 収益・費用素材はIntegration Ready。PRは未作成 |
+| resume_owner | Orchestrator |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
 
@@ -85,6 +85,8 @@
 | D-035 | PR #28がmainへmergeされ、Issue #9はcompletedとしてcloseされた。Issue #9の状態labelは `status: done` に更新済み | PR #28, GitHub Issue #9 | 2026-07-01 |
 | D-036 | #10 運営オペレーション素材はR/B/P/Judgeレビューを通し、BP-09/BP-10/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし運営責任者、当日担当、施設協力、事故対応、保険、責任分界、現金管理、食品衛生、記録範囲はHuman Checkに残す | `docs/issue-10-operations-sop.md`, `docs/loop-run.log.md` | 2026-07-01 |
 | D-037 | #10 運営オペレーション素材のdraft PR #29を作成し、Issue #10に `integration-ready` と `status: pr-ready` を付与した。Issue #10はPR merge後までopenのままにする | PR #29, GitHub Issue #10 | 2026-07-01 |
+| D-038 | PR #29がmainへmergeされ、Issue #10はcompletedとしてcloseされた。Issue #10の状態labelは `status: done` に更新済み | PR #29, GitHub Issue #10 | 2026-07-01 |
+| D-039 | #11 収益・費用素材はR/B/P/Judgeレビューを通し、BP-11/BP-07/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし費用範囲、価格、赤字許容、無料提供、寄付、施設負担、現金管理、廃棄、継続基準はHuman Checkに残す | `docs/issue-11-revenue-cost.md`, `docs/loop-run.log.md` | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -92,8 +94,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #10 L2レビュー済み / Integration Ready / PR #29 draft open | PR #29のmerge後にIssue #10をcompleted closeする | pr_babysitter / Human |
-| S-004 | PR handoff | PR #29 draft open | PR #29を `pr_babysitter` で監視し、merge後に#11 収益・費用のL2開始可否を判断する | pr_babysitter |
+| S-003 | 事業計画Issue実行 | #11 L2レビュー済み / Integration Ready / PR未作成 | #11をPR化する | Orchestrator |
+| S-004 | PR handoff | PR未作成 | PR作成前に実差分denylist確認と未コミット変更の分離確認を行う | Orchestrator |
 
 ## 7. Human Queue
 
@@ -130,6 +132,11 @@
 | HQ-030 | 事故対応、保険、責任分界、緊急連絡、停止権限をどう扱うか | `docs/issue-10-operations-sop.md`, GitHub Issue #13 | #13で確認先と運用仮説を整理する |
 | HQ-031 | 現金管理、釣り銭、売上記録、差異時対応、会計責任をどう扱うか | `docs/issue-10-operations-sop.md`, GitHub Issue #11/#13 | #11で収支、#13で金銭リスクを整理する |
 | HQ-032 | 保護者説明、同意、写真、個人情報、発話記録、記録保管をどう扱うか | `docs/issue-10-operations-sop.md`, GitHub Issue #13/#14 | #13/#14で記録方法と同意範囲を整理する |
+| HQ-033 | 実費回収に含める費用範囲をどう置くか | `docs/issue-11-revenue-cost.md`, GitHub Issue #11 | 商品、備品、運搬、廃棄、運営時間をどこまで含めるかHumanが判断する |
+| HQ-034 | 初回実証の予算、費用上限、赤字許容をどう置くか | `docs/issue-11-revenue-cost.md`, GitHub Issue #11/#14 | 検証目的、負担者、期間、上限をHumanが指定する |
+| HQ-035 | 無料提供、寄付、施設負担、運営者負担を選択肢に含めるか | `docs/issue-11-revenue-cost.md`, GitHub Issue #11/#12 | 外部説明、会計、責任範囲をHumanが確認する |
+| HQ-036 | 現金管理、差異、釣り銭、会計責任をどう扱うか | `docs/issue-11-revenue-cost.md`, GitHub Issue #13 | #13で金銭リスクと責任範囲を整理する |
+| HQ-037 | 継続、修正、停止の判断基準をどう置くか | `docs/issue-11-revenue-cost.md`, GitHub Issue #14/#15 | #14で検証項目と成功/失敗基準を整理し、#15で初版統合する |
 
 ## 8. 参照すべき中核資料
 
