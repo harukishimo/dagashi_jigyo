@@ -10,7 +10,7 @@
 | level | L2 |
 | created_at | 2026-07-01 |
 | created_by | Orchestrator / Creation-Implementation |
-| status | レビュー済み。Integration Ready（構造化素材として）/ PR未作成 |
+| status | レビュー済み。Integration Ready（構造化素材として）/ PR #31作成済み |
 | user_approval | 2026-07-01にユーザーがPR作成までの進行を基本承認。PR #30 merge後、Orchestratorが次候補#12を採用 |
 
 この文書は、駄菓子事業計画書初版のBP-04/BP-06/BP-13へ統合する前の施設側説明素材である。施設へ送る確定文、依頼文、交渉資料ではない。施設承認、施設負担、責任範囲、安全・衛生、保護者説明、費用負担を確定する文書でもない。
@@ -229,7 +229,7 @@
 |---|---|
 | reviewed_at | 2026-07-01 |
 | result | Integration Ready（構造化素材として） |
-| pr_status | PR未作成 |
+| pr_status | PR #31 draft open |
 | done_status | 未完了。PR作成、merge、Issue完了判断は後続 |
 
 ### Red Team指摘
@@ -268,15 +268,15 @@
 | Human Check分離 | Pass | 施設説明文言、承認者、相談順序、場所、備品、職員関与、安全、衛生、責任、費用、記録をHuman Checkへ送っている |
 | denylist | Pass for L2 / Fail for L3 | 施設、保護者、子ども、安全・衛生、責任範囲、個人情報、費用負担、外部説明に触れるためL3不可。L2成果物としては確定判断を避けている |
 | Integration Ready | Pass | BP-04/BP-06/BP-13へ渡せる構造化素材として統合可能 |
-| PR Ready | Pending | PR未作成。実差分denylist確認と未コミット変更の分離確認が必要 |
+| PR Ready | Pass | PR #31作成済み。実差分denylist確認と未コミット変更の分離確認済み |
 
 ### PR Handoff
 
 - branch: `codex/issue-12-facility-explanation-l2`
-- pr_url: 未作成
+- pr_url: https://github.com/harukishimo/dagashi_jigyo/pull/31
 - pr_title: `[codex] #12 施設説明ポイント素材を追加`
 - PR本文に含めるべき内容: 施設側説明ポイント、施設側懸念と回答方針、施設確認質問、外部説明禁止表現、Human Check、L3不可理由。
-- PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないこと。
-- GitHub Issue更新: PR作成後にIssue #12へ `integration-ready` と `status: pr-ready` を付与し、PRへの引き継ぎコメントを追加する。
-- issue_comment: 未作成
-- 次の扱い: #12をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う。
+- PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認済み。
+- GitHub Issue更新: Issue #12に `integration-ready` と `status: pr-ready` を付与し、PR #31への引き継ぎコメントを追加済み。
+- issue_comment: https://github.com/harukishimo/dagashi_jigyo/issues/12#issuecomment-4851646125
+- 次の扱い: PR #31のmerge判断は人間に委ねる。merge後にIssue #12をcompleted closeする。
