@@ -31,16 +31,16 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #16 初版ドラフトL2レビュー済み / Integration Ready / PR未作成 |
+| current_phase | #16 初版ドラフトPR #34 draft open / Issue #16 `integration-ready` / `status: pr-ready` |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
 | current_branch | codex/issue-16-business-plan-draft-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-047 |
+| current_run_id | LOG-048 |
 | last_decision_by | Human / Orchestrator |
-| next_target | #16をPR化する。PR作成前に実差分denylist確認と既存の未コミット変更を巻き込まない確認を行う |
-| resume_condition | #16初版ドラフトは `docs/business-plan-draft.md` に作成済み。R/B/P/JudgeレビューでIntegration Ready。PR未作成 |
-| resume_owner | Orchestrator |
+| next_target | PR #34をpr_babysitterで監視する。merge後にIssue #16をcompleted closeし、次候補#17 最終レビューをL1で実行する |
+| resume_condition | PR #34はdraft open。Issue #16に `integration-ready` と `status: pr-ready` を付与済み。PR #34のmerge判断は人間に委ねる |
+| resume_owner | pr_babysitter / Human |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
 
@@ -100,6 +100,7 @@
 | D-050 | PR #33がmainへmergeされ、Issue #14はcompletedとしてcloseされた。Issue #14の状態labelは `status: done` に更新済み | PR #33, GitHub Issue #14 | 2026-07-01 |
 | D-051 | #15 統合前チェックはL1 gateとして実行し、#2〜#14をすべて#16初版統合の対象と判定した。差し戻しIssueはない。ただしHuman CheckはBP-13へ未解消のまま統合する | GitHub Issue #15, `docs/loop-run.log.md` | 2026-07-01 |
 | D-052 | #16 初版ドラフトは、#2〜#14のIntegration Ready素材だけを使ってBP-01〜BP-14へ統合し、R/B/P/JudgeレビューでIntegration Readyと判定した。ただし外部提出、実証実験、商品・価格、安全・衛生・法規制・責任判断はHuman Checkに残す | `docs/business-plan-draft.md`, `docs/loop-run.log.md` | 2026-07-01 |
+| D-053 | #16 初版ドラフトのdraft PR #34を作成し、Issue #16に `integration-ready` と `status: pr-ready` を付与した。Issue #16はPR merge後までopenのままにする | PR #34, GitHub Issue #16 | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -107,8 +108,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #16 L2レビュー済み / Integration Ready / PR未作成 | 実差分denylist確認と未コミット変更分離確認後、#16 draft PRを作成する | Orchestrator |
-| S-004 | PR handoff | open PRなし | #16初版ドラフトをdraft PR化し、Issue #16へPR Handoffコメントを追加する | Orchestrator |
+| S-003 | 事業計画Issue実行 | #16 L2レビュー済み / Integration Ready / PR #34 draft open | PR #34のmerge後にIssue #16をcompleted closeする | pr_babysitter / Human |
+| S-004 | PR handoff | PR #34 draft open | PR #34を `pr_babysitter` で監視し、merge後に#17 最終レビューのL1実行へ進む | pr_babysitter |
 
 ## 7. Human Queue
 
