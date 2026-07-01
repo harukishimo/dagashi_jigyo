@@ -31,15 +31,15 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #12 施設説明素材L2レビュー済み / Integration Ready / PR #31 draft open |
+| current_phase | #13 リスク整理素材L2レビュー済み / Integration Ready / PR #32 draft open |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
-| current_branch | codex/issue-12-facility-explanation-l2 |
+| current_branch | codex/issue-13-risk-response-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-038 |
+| current_run_id | LOG-041 |
 | last_decision_by | Human / Orchestrator |
-| next_target | PR #31をpr_babysitterで監視する。merge後にIssue #12をcompleted closeし、次候補#13 リスク整理のL2開始可否を判断する |
-| resume_condition | PR #30はmainへmerge済み。Issue #11はcompleted close済み。#12 施設説明素材はPR #31としてdraft open。Issue #12に `integration-ready` と `status: pr-ready` を付与済み。PR #31のmerge判断は人間に委ねる |
+| next_target | PR #32をpr_babysitterで監視する。merge後にIssue #13をcompleted closeし、次候補#14 検証項目・成功基準のL2開始可否を判断する |
+| resume_condition | PR #31はmainへmerge済み。Issue #12はcompleted close済み。#13 リスク整理素材はPR #32としてdraft open。Issue #13に `integration-ready` と `status: pr-ready` を付与済み。PR #32のmerge判断は人間に委ねる |
 | resume_owner | pr_babysitter / Human |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
@@ -91,6 +91,9 @@
 | D-041 | PR #30がmainへmergeされ、Issue #11はcompletedとしてcloseされた。Issue #11の状態labelは `status: done` に更新済み | PR #30, GitHub Issue #11 | 2026-07-01 |
 | D-042 | #12 施設説明素材はR/B/P/Judgeレビューを通し、BP-04/BP-06/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし施設へ実際に伝える文言、施設候補、承認者、相談順序、施設側協力範囲、安全、衛生、責任、費用、記録はHuman Checkに残す | `docs/issue-12-facility-explanation.md`, `docs/loop-run.log.md` | 2026-07-01 |
 | D-043 | #12 施設説明素材のdraft PR #31を作成し、Issue #12に `integration-ready` と `status: pr-ready` を付与した。Issue #12はPR merge後までopenのままにする | PR #31, GitHub Issue #12 | 2026-07-01 |
+| D-044 | PR #31がmainへmergeされ、Issue #12はcompletedとしてcloseされた。Issue #12の状態labelは `status: done` に更新済み | PR #31, GitHub Issue #12 | 2026-07-01 |
+| D-045 | #13 リスク整理素材はR/B/P/Judgeレビューを通し、BP-10/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし営業許可・届出、保健所相談、食品表示、アレルギー、事故対応、保険、責任分界、現金管理、個人情報、施設ルールはHuman Checkに残す | `docs/issue-13-risk-response.md`, `docs/loop-run.log.md` | 2026-07-01 |
+| D-046 | #13 リスク整理素材のdraft PR #32を作成し、Issue #13に `integration-ready` と `status: pr-ready` を付与した。Issue #13はPR merge後までopenのままにする | PR #32, GitHub Issue #13 | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -98,8 +101,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #12 L2レビュー済み / Integration Ready / PR #31 draft open | PR #31のmerge後にIssue #12をcompleted closeする | pr_babysitter / Human |
-| S-004 | PR handoff | PR #31 draft open | PR #31を `pr_babysitter` で監視し、merge後に#13 リスク整理のL2開始可否を判断する | pr_babysitter |
+| S-003 | 事業計画Issue実行 | #13 L2レビュー済み / Integration Ready / PR #32 draft open | PR #32のmerge後にIssue #13をcompleted closeする | pr_babysitter / Human |
+| S-004 | PR handoff | PR #32 draft open | PR #32を `pr_babysitter` で監視し、merge後に#14 検証項目・成功基準のL2開始可否を判断する | pr_babysitter |
 
 ## 7. Human Queue
 
@@ -145,6 +148,14 @@
 | HQ-039 | 相談する施設候補、承認者、相談順序、確認方法をどう置くか | `docs/issue-12-facility-explanation.md`, GitHub Issue #12 | Humanが候補施設または相談先を指定する |
 | HQ-040 | 施設に求めてよい場所、時間、備品、職員関与の範囲をどう置くか | `docs/issue-12-facility-explanation.md`, GitHub Issue #12/#13 | 施設候補ごとに条件を確認する |
 | HQ-041 | 施設説明に含める安全、衛生、責任、保険、費用、記録の範囲をどう置くか | `docs/issue-12-facility-explanation.md`, GitHub Issue #13/#14 | #13でリスク、#14で検証項目へ整理する |
+| HQ-042 | 営業許可・届出、保健所相談、食品取扱範囲の確認先をどう置くか | `docs/issue-13-risk-response.md`, GitHub Issue #13 | Humanが公式確認先、相談要否、担当を決める |
+| HQ-043 | 食品表示、アレルギー、賞味期限、保管、開封・小分け・詰め替えをどう確認するか | `docs/issue-13-risk-response.md`, GitHub Issue #13 | 商品候補ごとの確認方法を決める |
+| HQ-044 | 事故対応、保険、責任分界、緊急連絡、停止権限をどう扱うか | `docs/issue-13-risk-response.md`, GitHub Issue #13 | 施設、保護者、運営者の役割と連絡先を確認する |
+| HQ-045 | 現金管理、釣り銭、売上記録、差異、紛失、寄付・無料提供の扱いをどうするか | `docs/issue-13-risk-response.md`, GitHub Issue #11/#13 | 会計責任、記録粒度、差異時対応をHumanが決める |
+| HQ-046 | 保護者説明、同意、対象年齢、参加条件、緊急連絡をどう置くか | `docs/issue-13-risk-response.md`, GitHub Issue #13/#14 | 施設ルールと対象者条件を踏まえて説明範囲を決める |
+| HQ-047 | 写真、個人情報、発話記録、観察メモ、記録保管、共有、削除をどう扱うか | `docs/issue-13-risk-response.md`, GitHub Issue #13/#14 | 記録対象、同意、保管方法、共有範囲を決める |
+| HQ-048 | 施設ルール、食べる場所、持ち帰り、ゴミ、原状回復をどう確認するか | `docs/issue-13-risk-response.md`, GitHub Issue #12/#13 | 施設候補ごとに禁止事項と確認先を整理する |
+| HQ-049 | 実施を止める条件、再開条件、判断保留条件をどう置くか | `docs/issue-13-risk-response.md`, GitHub Issue #14 | #14で成功/修正/停止基準に変換する |
 
 ## 8. 参照すべき中核資料
 
