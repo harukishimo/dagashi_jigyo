@@ -10,7 +10,7 @@
 | level | L2 |
 | created_at | 2026-07-01 |
 | created_by | Orchestrator / Creation-Implementation |
-| status | レビュー済み。Integration Ready（構造化素材として）/ PR未作成 |
+| status | レビュー済み。Integration Ready（構造化素材として）/ PR #19作成済み |
 | user_approval | 2026-07-01にユーザーが「#2をL2で開始してOK」と承認 |
 
 この文書は、駄菓子事業計画書初版へ統合する前の前提台帳である。事業計画書本文ではない。
@@ -133,8 +133,8 @@
 |---|---|
 | reviewed_at | 2026-07-01 11:17 JST |
 | result | Integration Ready（構造化素材として） |
-| pr_status | PR未作成。PR作成前に最終差分確認が必要 |
-| done_status | 未完了。L2の停止位置はPR作成後の人間レビュー |
+| pr_status | PR #19作成済み。人間レビュー待ち |
+| done_status | 未完了。mergeまたは完了判断は人間が行う |
 
 ### Red Team指摘
 
@@ -152,7 +152,7 @@
 | B-001 | 上位ゴールの会話根拠を独立したsource_idに分けた | source_id一覧、P-001 |
 | B-002 | R/B/P/Judge未実施だったGAP-004をレビュー実施済みへ更新した | GAP-004 |
 | B-003 | Integration Readyの範囲を「構造化素材として」に限定した | メタ情報、レビュー結果、Judge判定 |
-| B-004 | PR未作成、GitHub Issue未変更、Human Check未解消を明示した | レビュー結果、PR Handoff |
+| B-004 | PR作成状況、GitHub Issue label/comment、Human Check未解消を明示した | レビュー結果、PR Handoff |
 
 ### Purple Team判断
 
@@ -170,12 +170,13 @@
 | Human Check分離 | Pass | P-003〜P-008、P-013、HC-001〜HC-007を確定せず分離している |
 | denylist | Pass for L2 / Fail for L3 | `business_decision`, `legal_hygiene_safety`, `external_side_effects`に触れるためL3不可。L2成果物としては確定判断を避けている |
 | Integration Ready | Pass | BP-13/BP-14へ渡せる構造化素材として統合可能 |
-| PR Ready | Not yet | PRは未作成。L2完了にはPR作成と人間レビューが必要 |
+| PR Ready | Pass | PR #19を作成済み。mergeまたは完了判断は人間が行う |
 
 ### PR Handoff
 
-- branch: 未作成
-- pr_url: なし
+- branch: `codex/issue-2-prerequisite-ledger`
+- pr_url: https://github.com/harukishimo/dagashi_jigyo/pull/19
 - pr_title候補: `#2 前提台帳を追加`
 - PR本文に含めるべき内容: 前提台帳作成、R/B/P/Judgeレビュー結果、Integration Readyは構造化素材としての判定であること、Human Check未解消事項、L3不可理由。
-- PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないこと、GitHub IssueのStatus/label変更を行わないこと。
+- PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認済み。
+- GitHub Issue更新: #2に `status: pr-ready` と `integration-ready` を付与し、PR #19へのコメントを追加済み。
