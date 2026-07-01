@@ -10,7 +10,7 @@
 | level | L2 |
 | created_at | 2026-07-01 |
 | created_by | Orchestrator / Creation-Implementation |
-| status | レビュー済み。Integration Ready（構造化素材として）/ PR #33 draft open |
+| status | 完了。Integration Ready（構造化素材として）/ PR #33 merge済み |
 | user_approval | 2026-07-01にユーザーがPR作成までの進行を基本承認。PR #32 merge後、Orchestratorが次候補#14を採用 |
 
 この文書は、駄菓子事業計画書初版のBP-08/BP-12/BP-13へ統合する前の検証項目・判断基準素材である。実証実験の実施、成功基準の最終採用、実施条件、対象者、施設承認、安全・衛生・責任範囲を確定する文書ではない。
@@ -197,8 +197,8 @@
 |---|---|
 | reviewed_at | 2026-07-01 |
 | result | Integration Ready（構造化素材として） |
-| pr_status | PR #33 draft open |
-| done_status | 未完了。PR作成、merge、Issue完了判断は後続 |
+| pr_status | PR #33 merge済み |
+| done_status | 完了。Issue #14はGitHub上でcompletedとしてclose済み。`integration-ready` と `status: done` を付与済み |
 
 ### Red Team指摘
 
@@ -236,15 +236,17 @@
 | Human Check分離 | Pass | 成功基準、測定項目、停止条件、記録方法、費用判断、個人情報をHuman Checkへ残している |
 | denylist | Pass for L2 / Fail for L3 | 成功基準、実証条件、安全・衛生、現金管理、個人情報、外部副作用に触れるためL3不可。L2成果物としては確定判断を避けている |
 | Integration Ready | Pass | BP-08/BP-12/BP-13へ渡せる構造化素材として統合可能 |
-| PR Ready | Pass | PR #33作成済み。実差分denylist確認と未コミット変更の分離確認済み |
+| PR Ready | Merged to main | PR #33はHumanによりmainへmerge済み |
 
 ### PR Handoff
 
 - branch: `codex/issue-14-validation-criteria-l2`
 - pr_url: https://github.com/harukishimo/dagashi_jigyo/pull/33
 - pr_title: `[codex] #14 検証項目・成功基準素材を追加`
+- merge_commit: `96ae0ea69e16946108d5df1497707c7ca1d8b4d0`
 - PR本文に含めるべき内容: 検証項目マトリクス、測定項目セット、基準候補、実施前ゲート、停止条件、記録方法、Human Check、L3不可理由。
 - PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認済み。
-- GitHub Issue更新: Issue #14に `integration-ready` と `status: pr-ready` を付与し、PR #33への引き継ぎコメントを追加済み。
+- GitHub Issue更新: Issue #14から `status: pr-ready` を外し、`status: done` を付与済み。Issue #14はcompletedとしてclose済み。`integration-ready` は維持。
 - issue_comment: https://github.com/harukishimo/dagashi_jigyo/issues/14#issuecomment-4852077370
-- 次の扱い: PR作成後はmerge判断を人間に委ねる。merge後にIssue #14をcompleted closeし、次候補#15 初版統合へ進む。
+- done_comment: https://github.com/harukishimo/dagashi_jigyo/issues/14#issuecomment-4852159890
+- 次の扱い: #14はDone。次候補#15 統合前チェックへ進む。
