@@ -10,7 +10,7 @@
 | level | L2 |
 | created_at | 2026-07-01 |
 | created_by | Orchestrator / Creation-Implementation |
-| status | レビュー済み。Integration Ready（構造化素材として）/ PR #21 merge済み / PR #20 main反映待ち |
+| status | レビュー済み。Integration Ready（構造化素材として）/ PR #21 merge済み / PR #20 main merge済み |
 | user_approval | 2026-07-01にユーザーが「開始をしてもらって大丈夫です。PR作成まで許可無しで対応してもらって大丈夫」と承認 |
 
 この文書は、駄菓子事業計画書初版のBP-02へ統合する前のWhy素材である。事業計画書本文の確定版ではない。
@@ -166,8 +166,8 @@
 |---|---|
 | reviewed_at | 2026-07-01 |
 | result | Integration Ready（構造化素材として） |
-| pr_status | PR #21はPR #20のbranchへmerge済み。main反映はPR #20待ち |
-| done_status | 未完了。Issue #3はGitHub上ではopenのまま。main反映または完了判断は人間が行う |
+| pr_status | PR #21はPR #20のbranchへmerge済み。PR #20もmainへmerge済み |
+| done_status | main反映済み。ただしIssue #3はGitHub上ではopenのまま。完了扱い、close、label更新は次判断事項 |
 
 ### Red Team指摘
 
@@ -205,7 +205,7 @@
 | Human Check分離 | Pass | 外部説明表現、課題表現、実証優先度、教育・地域貢献表現をHuman Checkへ送っている |
 | denylist | Pass for L2 / Fail for L3 | Why、提供価値、対象者、実証実験に触れるためL3不可。L2成果物としては確定判断を避けている |
 | Integration Ready | Pass | BP-02/BP-13へ渡せる構造化素材として統合可能 |
-| PR Ready | Merged to stack branch | PR #21はPR #20のbranchへmerge済み。PR #20をmainへmergeすると#3素材もmainへ入る |
+| PR Ready | Merged to main | PR #21はPR #20のbranchへmerge済み。PR #20もmainへmerge済みのため#3素材はmain反映済み |
 
 ### PR Handoff
 
@@ -214,7 +214,8 @@
 - pr_url: https://github.com/harukishimo/dagashi_jigyo/pull/21
 - merge_commit: `cc5a2f570f3a082a5c0d17af3acd696a32de6297`
 - main_handoff_pr: https://github.com/harukishimo/dagashi_jigyo/pull/20
+- main_merge_commit: `340690d7eba48ff885d75af0075978c45645a456`
 - pr_title候補: `[codex] #3 Why素材を追加`
 - PR本文に含めるべき内容: 課題仮説、Whyステートメント案、反証条件、実証検証方法、Human Check、L3不可理由。
 - PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認する。
-- GitHub Issue更新: Issue #3のlabel/comment/stateは変更していない。PR #21は `Refs #3` でmerge済みのため、Issue #3はopenのまま。
+- GitHub Issue更新: Issue #3のlabel/comment/stateは変更していない。PR #21は `Refs #3` でmerge済み、PR #20もmainへmerge済みだが、Issue #3はopenのまま。
