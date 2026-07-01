@@ -31,16 +31,16 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #8 初回実証実験計画素材L2レビュー済み / Integration Ready / PR #27 draft open |
+| current_phase | #9 商品・価格仮説素材L2レビュー済み / Integration Ready / PR未作成 |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
-| current_branch | codex/issue-8-experiment-plan-l2 |
+| current_branch | codex/issue-9-product-price-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-026 |
+| current_run_id | LOG-028 |
 | last_decision_by | Human / Orchestrator |
-| next_target | PR #27をpr_babysitterで監視する。merge後にIssue #8をcompleted closeし、次候補#9 商品・価格のL2開始可否を判断する |
-| resume_condition | PR #26はmainへmerge済み。Issue #7はcompleted close済み。#8 初回実証実験計画素材はPR #27としてdraft open。Issue #8に `integration-ready` と `status: pr-ready` を付与済み。PR #27のmerge判断は人間に委ねる |
-| resume_owner | pr_babysitter / Human |
+| next_target | #9をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う |
+| resume_condition | PR #27はmainへmerge済み。Issue #8はcompleted close済み。#9 商品・価格仮説素材はIntegration Ready。PR未作成 |
+| resume_owner | Orchestrator / pr_handoff |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
 
@@ -79,6 +79,8 @@
 | D-029 | PR #26がmainへmergeされ、Issue #7はcompletedとしてcloseされた。Issue #7の状態labelは `status: done` に更新済み | PR #26, GitHub Issue #7 | 2026-07-01 |
 | D-030 | #8 初回実証実験計画素材はR/B/P/Judgeレビューを通し、BP-08/BP-12/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし実施場所、日程、対象者、施設承認、保護者説明、安全・衛生、責任範囲、成功基準はHuman Checkに残す | `docs/issue-08-initial-experiment-plan.md`, `docs/loop-run.log.md` | 2026-07-01 |
 | D-031 | #8 初回実証実験計画素材のdraft PR #27を作成し、Issue #8に `integration-ready` と `status: pr-ready` を付与した。Issue #8はPR merge後までopenのままにする | PR #27, GitHub Issue #8 | 2026-07-01 |
+| D-032 | PR #27がmainへmergeされ、Issue #8はcompletedとしてcloseされた。Issue #8の状態labelは `status: done` に更新済み | PR #27, GitHub Issue #8 | 2026-07-01 |
+| D-033 | #9 商品・価格仮説素材はR/B/P/Judgeレビューを通し、BP-07/BP-10/BP-11/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし商品範囲、価格、実費回収、食品表示、アレルギー、保管、仕入れ、現金管理はHuman Checkに残す | `docs/issue-09-product-price.md`, `docs/loop-run.log.md` | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -86,8 +88,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #8 L2レビュー済み / Integration Ready / PR #27 draft open | PR #27のmerge後にIssue #8をcompleted closeする | pr_babysitter / Human |
-| S-004 | PR handoff | PR #27 draft open | PR #27を `pr_babysitter` で監視し、merge後に#9 商品・価格のL2開始可否を判断する | pr_babysitter |
+| S-003 | 事業計画Issue実行 | #9 L2レビュー済み / Integration Ready / PR未作成 | #9をPR化する | Orchestrator / pr_handoff |
+| S-004 | PR handoff | PR未作成 | PR作成後、Issue #9を `integration-ready` / `status: pr-ready` に更新し、PRを `pr_babysitter` へ渡す | pr_handoff |
 
 ## 7. Human Queue
 
@@ -114,6 +116,11 @@
 | HQ-020 | 施設承認、保護者説明、緊急連絡、停止権限、責任分界をどう確認するか | `docs/issue-08-initial-experiment-plan.md`, GitHub Issue #10/#12/#13 | #10/#12/#13で確認先と運用仮説を整理する |
 | HQ-021 | 商品範囲、価格帯、食品衛生、営業許可・届出、アレルギー、保管をどう確認するか | `docs/issue-08-initial-experiment-plan.md`, GitHub Issue #9/#13 | #9/#13で商品・価格仮説と安全確認事項を整理する |
 | HQ-022 | 記録範囲、写真、個人情報、発話記録、成功/失敗/停止基準をどう置くか | `docs/issue-08-initial-experiment-plan.md`, GitHub Issue #13/#14 | #13/#14で記録方法と判断基準を整理する |
+| HQ-023 | 初回実証で扱ってよい商品範囲、商品数、食品/非食品の扱いをどう置くか | `docs/issue-09-product-price.md`, GitHub Issue #9/#13 | Humanが候補範囲を指定する、または#13で確認条件を整理する |
+| HQ-024 | 具体的な価格帯、購入上限、無料提供・チケット制の有無をどう置くか | `docs/issue-09-product-price.md`, GitHub Issue #9/#10/#11 | #10/#11で会計・実費回収と合わせてHumanが判断する |
+| HQ-025 | 実費回収に含める費用範囲、赤字許容、寄付、施設負担をどう扱うか | `docs/issue-09-product-price.md`, GitHub Issue #11 | #11で収支仮説を作りHumanが判断する |
+| HQ-026 | 食品表示、アレルギー、賞味期限、保管、個包装、開封・詰め替えをどう確認するか | `docs/issue-09-product-price.md`, GitHub Issue #13 | #13で確認先、確認方法、判断担当を決める |
+| HQ-027 | 現金管理、釣り銭、売上記録、差異時対応をどう運用するか | `docs/issue-09-product-price.md`, GitHub Issue #10/#11 | #10でSOPと役割分担、#11で収支記録へ接続する |
 
 ## 8. 参照すべき中核資料
 
