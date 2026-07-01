@@ -10,7 +10,7 @@
 | level | L2 |
 | created_at | 2026-07-01 |
 | created_by | Orchestrator / Creation-Implementation |
-| status | レビュー済み。Integration Ready（構造化素材として）/ PR未作成 |
+| status | レビュー済み。Integration Ready（構造化素材として）/ PR #30作成済み |
 | user_approval | 2026-07-01にユーザーがPR作成までの進行を基本承認。PR #29 merge後、Orchestratorが次候補#11を採用 |
 
 この文書は、駄菓子事業計画書初版のBP-11へ統合する前の収益・費用素材である。販売価格、仕入れ額、負担者、赤字許容額、継続可否を確定する文書ではない。
@@ -219,7 +219,7 @@
 |---|---|
 | reviewed_at | 2026-07-01 |
 | result | Integration Ready（構造化素材として） |
-| pr_status | PR未作成 |
+| pr_status | PR #30 draft open |
 | done_status | 未完了。PR作成、merge、Issue完了判断は後続 |
 
 ### Red Team指摘
@@ -258,15 +258,15 @@
 | Human Check分離 | Pass | 費用範囲、価格、赤字許容、無料提供、寄付、施設負担、現金管理、廃棄、継続基準をHuman Checkへ送っている |
 | denylist | Pass for L2 / Fail for L3 | 販売価格、費用負担、寄付、赤字許容、継続判断、外部説明に触れるためL3不可。L2成果物としては確定判断を避けている |
 | Integration Ready | Pass | BP-11/BP-07/BP-13へ渡せる構造化素材として統合可能 |
-| PR Ready | Pending | PR未作成。実差分denylist確認と未コミット変更の分離確認が必要 |
+| PR Ready | Pass | PR #30作成済み。実差分denylist確認と未コミット変更の分離確認済み |
 
 ### PR Handoff
 
 - branch: `codex/issue-11-revenue-cost-l2`
-- pr_url: 未作成
+- pr_url: https://github.com/harukishimo/dagashi_jigyo/pull/30
 - pr_title: `[codex] #11 収益・費用仮説素材を追加`
 - PR本文に含めるべき内容: 費用項目表、実費回収モデル仮説、初回実証の算出フレーム、赤字許容、継続条件、Human Check、L3不可理由。
-- PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないこと。
-- GitHub Issue更新: PR作成後にIssue #11へ `integration-ready` と `status: pr-ready` を付与し、PRへの引き継ぎコメントを追加する。
-- issue_comment: 未作成
-- 次の扱い: #11をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う。
+- PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認済み。
+- GitHub Issue更新: Issue #11に `integration-ready` と `status: pr-ready` を付与し、PR #30への引き継ぎコメントを追加済み。
+- issue_comment: https://github.com/harukishimo/dagashi_jigyo/issues/11#issuecomment-4851420386
+- 次の扱い: PR #30のmerge判断は人間に委ねる。merge後にIssue #11をcompleted closeする。

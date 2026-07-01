@@ -31,16 +31,16 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #11 収益・費用素材L2レビュー済み / Integration Ready / PR未作成 |
+| current_phase | #11 収益・費用素材L2レビュー済み / Integration Ready / PR #30 draft open |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
 | current_branch | codex/issue-11-revenue-cost-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-034 |
+| current_run_id | LOG-035 |
 | last_decision_by | Human / Orchestrator |
-| next_target | #11をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う |
-| resume_condition | PR #29はmainへmerge済み。Issue #10はcompleted close済み。#11 収益・費用素材はIntegration Ready。PRは未作成 |
-| resume_owner | Orchestrator |
+| next_target | PR #30をpr_babysitterで監視する。merge後にIssue #11をcompleted closeし、次候補#12 施設説明のL2開始可否を判断する |
+| resume_condition | PR #29はmainへmerge済み。Issue #10はcompleted close済み。#11 収益・費用素材はPR #30としてdraft open。Issue #11に `integration-ready` と `status: pr-ready` を付与済み。PR #30のmerge判断は人間に委ねる |
+| resume_owner | pr_babysitter / Human |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
 
@@ -87,6 +87,7 @@
 | D-037 | #10 運営オペレーション素材のdraft PR #29を作成し、Issue #10に `integration-ready` と `status: pr-ready` を付与した。Issue #10はPR merge後までopenのままにする | PR #29, GitHub Issue #10 | 2026-07-01 |
 | D-038 | PR #29がmainへmergeされ、Issue #10はcompletedとしてcloseされた。Issue #10の状態labelは `status: done` に更新済み | PR #29, GitHub Issue #10 | 2026-07-01 |
 | D-039 | #11 収益・費用素材はR/B/P/Judgeレビューを通し、BP-11/BP-07/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし費用範囲、価格、赤字許容、無料提供、寄付、施設負担、現金管理、廃棄、継続基準はHuman Checkに残す | `docs/issue-11-revenue-cost.md`, `docs/loop-run.log.md` | 2026-07-01 |
+| D-040 | #11 収益・費用素材のdraft PR #30を作成し、Issue #11に `integration-ready` と `status: pr-ready` を付与した。Issue #11はPR merge後までopenのままにする | PR #30, GitHub Issue #11 | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -94,8 +95,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #11 L2レビュー済み / Integration Ready / PR未作成 | #11をPR化する | Orchestrator |
-| S-004 | PR handoff | PR未作成 | PR作成前に実差分denylist確認と未コミット変更の分離確認を行う | Orchestrator |
+| S-003 | 事業計画Issue実行 | #11 L2レビュー済み / Integration Ready / PR #30 draft open | PR #30のmerge後にIssue #11をcompleted closeする | pr_babysitter / Human |
+| S-004 | PR handoff | PR #30 draft open | PR #30を `pr_babysitter` で監視し、merge後に#12 施設説明のL2開始可否を判断する | pr_babysitter |
 
 ## 7. Human Queue
 
