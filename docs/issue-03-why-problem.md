@@ -167,7 +167,7 @@
 | reviewed_at | 2026-07-01 |
 | result | Integration Ready（構造化素材として） |
 | pr_status | PR #21はPR #20のbranchへmerge済み。PR #20もmainへmerge済み |
-| done_status | main反映済み。ただしIssue #3はGitHub上ではopenのまま。完了扱い、close、label更新は次判断事項 |
+| done_status | 完了。Issue #3はGitHub上でcompletedとしてclose済み。`integration-ready` と `status: done` を付与済み |
 
 ### Red Team指摘
 
@@ -218,4 +218,4 @@
 - pr_title候補: `[codex] #3 Why素材を追加`
 - PR本文に含めるべき内容: 課題仮説、Whyステートメント案、反証条件、実証検証方法、Human Check、L3不可理由。
 - PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認する。
-- GitHub Issue更新: Issue #3のlabel/comment/stateは変更していない。PR #21は `Refs #3` でmerge済み、PR #20もmainへmerge済みだが、Issue #3はopenのまま。
+- GitHub Issue更新: Issue #3に `integration-ready` と `status: done` を付与し、完了コメントを追加済み。Issue #3はcompletedとしてclose済み。

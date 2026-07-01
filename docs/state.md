@@ -31,16 +31,16 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #3 Why素材main反映済み / Issue #3状態更新判断前 |
+| current_phase | #4 Who素材L2レビュー済み / Integration Ready / PR未作成 |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
-| current_branch | main |
+| current_branch | codex/issue-4-who-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-011 |
-| last_decision_by | Human / GitHub |
-| next_target | Issue #3をcompleted close / label更新するか判断する。その後、次候補は#4 WhoのL2開始判断 |
-| resume_condition | PR #20はmainへmerge済み。#3 Why素材はmain反映済み。Issue #3はlabel/comment/state未変更でopenのまま |
-| resume_owner | pr_babysitter / Human |
+| current_run_id | LOG-013 |
+| last_decision_by | Human / Orchestrator |
+| next_target | #4をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う |
+| resume_condition | Issue #3はcompleted close済み、`integration-ready` と `status: done` 付与済み。Humanが#4 WhoのL2開始とPR作成までを承認済み。`docs/issue-04-stakeholders.md` を作成し、構造化素材としてIntegration Ready判定済み |
+| resume_owner | Orchestrator |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
 
@@ -64,6 +64,8 @@
 | D-014 | #3 Why素材のPR #21を作成した。PR #21はPR #20のbranchをbaseにした積み上げPRで、Issue #3のlabel/comment/stateは未変更 | PR #21, `docs/issue-03-why-problem.md`, `docs/loop-run.log.md` | 2026-07-01 |
 | D-015 | PR #21はPR #20のbranchへmerge済み。ただしPR #20はdraft openのため、#3素材はmain未反映で、Issue #3もopenのまま | PR #20, PR #21, GitHub Issue #3 | 2026-07-01 |
 | D-016 | PR #20がmainへmergeされ、#3 Why素材はmain反映済み。Issue #3はopenのまま | PR #20, PR #21, GitHub Issue #3 | 2026-07-01 |
+| D-017 | Issue #3をcompletedとしてcloseし、`integration-ready` と `status: done` を付与した | GitHub Issue #3 | 2026-07-01 |
+| D-018 | #4 Who素材はR/B/P/Judgeレビューを通し、BP-04/BP-05/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし対象年齢、参加条件、施設承認、保護者同意、責任範囲はHuman Checkに残す | `docs/issue-04-stakeholders.md`, `docs/loop-run.log.md` | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -71,8 +73,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #3 L2レビュー済み / main反映済み / Issue #3 open | Issue #3の完了扱い、close、label更新要否を判断する | pr_babysitter / Human |
-| S-004 | PR handoff | open PRなし | open PRが作成されたら `pr_babysitter` へ渡す | Orchestrator |
+| S-003 | 事業計画Issue実行 | #4 L2レビュー済み / Integration Ready / PR未作成 | #4をPR化する | Orchestrator |
+| S-004 | PR handoff | open PRなし | #4 PR作成後に `pr_babysitter` へ渡す | Orchestrator |
 
 ## 7. Human Queue
 
@@ -83,8 +85,9 @@
 | HQ-004 | 法規制、衛生、安全、責任範囲の確認先と担当をどうするか | `docs/issue-02-prerequisite-ledger.md`, `docs/denylist.json` | Humanが確認先または判断担当を決める |
 | HQ-005 | BP-02の中心WhyとしてW-001を採用してよいか | `docs/issue-03-why-problem.md`, GitHub Issue #3 | Humanが採用、修正、差し戻しを判断する |
 | HQ-006 | 外部説明で「地域との接点」「金銭感覚」「思い出づくり」「地域貢献」をどこまで使ってよいか | `docs/issue-03-why-problem.md`, `docs/issue-02-prerequisite-ledger.md` | Humanが使用可能な表現を指定する |
-| HQ-007 | Issue #3をcompleted closeし、`integration-ready` / `status: done` 等を付与するか | GitHub Issue #3, PR #20, PR #21 | Human / OrchestratorがIssue状態更新を判断する |
-| HQ-008 | #4 WhoをL2で開始してよいか | GitHub Issue #4, `docs/issue-03-why-problem.md`, `docs/levels.md` | Human / Orchestratorが#4開始可否を判断する |
+| HQ-007 | 対象年齢、参加条件、付き添い要否をどう仮置きするか | `docs/issue-04-stakeholders.md`, GitHub Issue #4 | Humanが候補条件を指定する、または#8で仮説化する |
+| HQ-008 | 保護者説明と同意が必要か、必要ならどの粒度か | `docs/issue-04-stakeholders.md`, `docs/denylist.json` | 実施場所、対象年齢、施設ルール、記録有無を確認する |
+| HQ-009 | 施設側の承認者、現場担当者、相談順序をどう確認するか | `docs/issue-04-stakeholders.md`, GitHub Issue #12 | 施設候補ごとの相談先をHumanが確認する |
 
 ## 8. 参照すべき中核資料
 
