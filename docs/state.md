@@ -31,15 +31,15 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #7 事業環境・代替手段素材L2レビュー済み / Integration Ready / PR #26 draft open |
+| current_phase | #8 初回実証実験計画素材L2レビュー済み / Integration Ready / PR #27 draft open |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
-| current_branch | codex/issue-7-environment-l2 |
+| current_branch | codex/issue-8-experiment-plan-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-023 |
+| current_run_id | LOG-026 |
 | last_decision_by | Human / Orchestrator |
-| next_target | PR #26をpr_babysitterで監視する。merge後にIssue #7をcompleted closeし、次候補#8 初回実証実験計画のL2開始可否を判断する |
-| resume_condition | PR #25はmainへmerge済み。Issue #6はcompleted close済み。#7 事業環境・代替手段素材はPR #26としてdraft open。Issue #7に `integration-ready` と `status: pr-ready` を付与済み。PR #26のmerge判断は人間に委ねる |
+| next_target | PR #27をpr_babysitterで監視する。merge後にIssue #8をcompleted closeし、次候補#9 商品・価格のL2開始可否を判断する |
+| resume_condition | PR #26はmainへmerge済み。Issue #7はcompleted close済み。#8 初回実証実験計画素材はPR #27としてdraft open。Issue #8に `integration-ready` と `status: pr-ready` を付与済み。PR #27のmerge判断は人間に委ねる |
 | resume_owner | pr_babysitter / Human |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
@@ -76,6 +76,9 @@
 | D-026 | PR #25がmainへmergeされ、Issue #6はcompletedとしてcloseされた。Issue #6の状態labelは `status: done` に更新済み | PR #25, GitHub Issue #6 | 2026-07-01 |
 | D-027 | #7 事業環境・代替手段素材はR/B/P/Judgeレビューを通し、BP-02/BP-04/BP-05/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし対象地域、施設タイプ、参考事例の使用範囲、外部情報解釈、利用者ニーズ検証はHuman Checkに残す | `docs/issue-07-environment-alternatives.md`, `docs/loop-run.log.md` | 2026-07-01 |
 | D-028 | #7 事業環境・代替手段素材のdraft PR #26を作成し、Issue #7に `integration-ready` と `status: pr-ready` を付与した。Issue #7はPR merge後までopenのままにする | PR #26, GitHub Issue #7 | 2026-07-01 |
+| D-029 | PR #26がmainへmergeされ、Issue #7はcompletedとしてcloseされた。Issue #7の状態labelは `status: done` に更新済み | PR #26, GitHub Issue #7 | 2026-07-01 |
+| D-030 | #8 初回実証実験計画素材はR/B/P/Judgeレビューを通し、BP-08/BP-12/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし実施場所、日程、対象者、施設承認、保護者説明、安全・衛生、責任範囲、成功基準はHuman Checkに残す | `docs/issue-08-initial-experiment-plan.md`, `docs/loop-run.log.md` | 2026-07-01 |
+| D-031 | #8 初回実証実験計画素材のdraft PR #27を作成し、Issue #8に `integration-ready` と `status: pr-ready` を付与した。Issue #8はPR merge後までopenのままにする | PR #27, GitHub Issue #8 | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -83,8 +86,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #7 L2レビュー済み / Integration Ready / PR #26 draft open | PR #26のmerge後にIssue #7をcompleted closeする | pr_babysitter / Human |
-| S-004 | PR handoff | PR #26 draft open | PR #26を `pr_babysitter` で監視し、merge後に#8 初回実証実験計画のL2開始可否を判断する | pr_babysitter |
+| S-003 | 事業計画Issue実行 | #8 L2レビュー済み / Integration Ready / PR #27 draft open | PR #27のmerge後にIssue #8をcompleted closeする | pr_babysitter / Human |
+| S-004 | PR handoff | PR #27 draft open | PR #27を `pr_babysitter` で監視し、merge後に#9 商品・価格のL2開始可否を判断する | pr_babysitter |
 
 ## 7. Human Queue
 
@@ -107,6 +110,10 @@
 | HQ-016 | #7で想定する対象地域、施設タイプ、利用場面をどこまで仮置きするか | `docs/issue-07-environment-alternatives.md`, GitHub Issue #7/#8/#12 | Humanが候補条件を指定する、または#8/#12で仮説化する |
 | HQ-017 | 放課後児童クラブ、子ども食堂、地域イベント、商店などの参考対象を外部説明でどこまで使ってよいか | `docs/issue-07-environment-alternatives.md`, GitHub Issue #7 | Humanが参考事例と表現範囲を判断する |
 | HQ-018 | 利用者ニーズ仮説と代替手段との差分をどの順で検証するか | `docs/issue-07-environment-alternatives.md`, GitHub Issue #8/#14 | #8/#14で観察項目、質問項目、成功/失敗条件へ落とす |
+| HQ-019 | 初回実証の場所、日程、時間帯、対象年齢、参加条件、人数上限をどう置くか | `docs/issue-08-initial-experiment-plan.md`, GitHub Issue #8/#12 | Humanが候補条件を指定する、または#12/#14で仮説化する |
+| HQ-020 | 施設承認、保護者説明、緊急連絡、停止権限、責任分界をどう確認するか | `docs/issue-08-initial-experiment-plan.md`, GitHub Issue #10/#12/#13 | #10/#12/#13で確認先と運用仮説を整理する |
+| HQ-021 | 商品範囲、価格帯、食品衛生、営業許可・届出、アレルギー、保管をどう確認するか | `docs/issue-08-initial-experiment-plan.md`, GitHub Issue #9/#13 | #9/#13で商品・価格仮説と安全確認事項を整理する |
+| HQ-022 | 記録範囲、写真、個人情報、発話記録、成功/失敗/停止基準をどう置くか | `docs/issue-08-initial-experiment-plan.md`, GitHub Issue #13/#14 | #13/#14で記録方法と判断基準を整理する |
 
 ## 8. 参照すべき中核資料
 
