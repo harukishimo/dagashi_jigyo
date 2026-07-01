@@ -31,16 +31,16 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #13 リスク整理素材L2レビュー済み / Integration Ready / PR #32 draft open |
+| current_phase | #14 検証項目・成功基準素材L2レビュー済み / Integration Ready / PR未作成 |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
-| current_branch | codex/issue-13-risk-response-l2 |
+| current_branch | codex/issue-14-validation-criteria-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-041 |
+| current_run_id | LOG-043 |
 | last_decision_by | Human / Orchestrator |
-| next_target | PR #32をpr_babysitterで監視する。merge後にIssue #13をcompleted closeし、次候補#14 検証項目・成功基準のL2開始可否を判断する |
-| resume_condition | PR #31はmainへmerge済み。Issue #12はcompleted close済み。#13 リスク整理素材はPR #32としてdraft open。Issue #13に `integration-ready` と `status: pr-ready` を付与済み。PR #32のmerge判断は人間に委ねる |
-| resume_owner | pr_babysitter / Human |
+| next_target | #14をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う |
+| resume_condition | PR #32はmainへmerge済み。Issue #13はcompleted close済み。#14 検証項目・成功基準素材はIntegration Ready。PRは未作成 |
+| resume_owner | Orchestrator |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
 
@@ -94,6 +94,8 @@
 | D-044 | PR #31がmainへmergeされ、Issue #12はcompletedとしてcloseされた。Issue #12の状態labelは `status: done` に更新済み | PR #31, GitHub Issue #12 | 2026-07-01 |
 | D-045 | #13 リスク整理素材はR/B/P/Judgeレビューを通し、BP-10/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし営業許可・届出、保健所相談、食品表示、アレルギー、事故対応、保険、責任分界、現金管理、個人情報、施設ルールはHuman Checkに残す | `docs/issue-13-risk-response.md`, `docs/loop-run.log.md` | 2026-07-01 |
 | D-046 | #13 リスク整理素材のdraft PR #32を作成し、Issue #13に `integration-ready` と `status: pr-ready` を付与した。Issue #13はPR merge後までopenのままにする | PR #32, GitHub Issue #13 | 2026-07-01 |
+| D-047 | PR #32がmainへmergeされ、Issue #13はcompletedとしてcloseされた。Issue #13の状態labelは `status: done` に更新済み | PR #32, GitHub Issue #13 | 2026-07-01 |
+| D-048 | #14 検証項目・成功基準素材はR/B/P/Judgeレビューを通し、BP-08/BP-12/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし成功基準の採用、実証条件、停止条件、測定項目、記録方法、費用・継続判断はHuman Checkに残す | `docs/issue-14-validation-criteria.md`, `docs/loop-run.log.md` | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -101,8 +103,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #13 L2レビュー済み / Integration Ready / PR #32 draft open | PR #32のmerge後にIssue #13をcompleted closeする | pr_babysitter / Human |
-| S-004 | PR handoff | PR #32 draft open | PR #32を `pr_babysitter` で監視し、merge後に#14 検証項目・成功基準のL2開始可否を判断する | pr_babysitter |
+| S-003 | 事業計画Issue実行 | #14 L2レビュー済み / Integration Ready / PR未作成 | #14をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う | Orchestrator |
+| S-004 | PR handoff | PR未作成 | #14のdraft PRを作成し、Issue #14へ `integration-ready` と `status: pr-ready` を付与する | Orchestrator |
 
 ## 7. Human Queue
 
@@ -156,6 +158,13 @@
 | HQ-047 | 写真、個人情報、発話記録、観察メモ、記録保管、共有、削除をどう扱うか | `docs/issue-13-risk-response.md`, GitHub Issue #13/#14 | 記録対象、同意、保管方法、共有範囲を決める |
 | HQ-048 | 施設ルール、食べる場所、持ち帰り、ゴミ、原状回復をどう確認するか | `docs/issue-13-risk-response.md`, GitHub Issue #12/#13 | 施設候補ごとに禁止事項と確認先を整理する |
 | HQ-049 | 実施を止める条件、再開条件、判断保留条件をどう置くか | `docs/issue-13-risk-response.md`, GitHub Issue #14 | #14で成功/修正/停止基準に変換する |
+| HQ-050 | 成功、条件付き成功、修正、停止、判断保留の基準候補を採用してよいか | `docs/issue-14-validation-criteria.md`, GitHub Issue #14 | Humanが採用、修正、差し戻しを判断する |
+| HQ-051 | 初回実証で優先して検証する仮説をどれに絞るか | `docs/issue-14-validation-criteria.md`, GitHub Issue #14 | HumanがWhy/What/How/リスク/収支の優先順位を決める |
+| HQ-052 | 測定項目と記録方法の粒度をどう置くか | `docs/issue-14-validation-criteria.md`, GitHub Issue #14 | 記録担当、様式、保管方法、個人情報扱いを決める |
+| HQ-053 | 実施前ゲートと停止条件をどの粒度で採用するか | `docs/issue-14-validation-criteria.md`, GitHub Issue #13/#14 | 施設、保護者、安全・衛生、責任範囲の確認先を決める |
+| HQ-054 | 保護者・施設へ確認する質問項目をどう設計するか | `docs/issue-14-validation-criteria.md`, GitHub Issue #12/#14 | 外部説明文ではなく確認項目としてHumanが承認する |
+| HQ-055 | 実費回収、赤字許容、費用負担、無料/寄付/チケットの評価方法をどう置くか | `docs/issue-14-validation-criteria.md`, GitHub Issue #11/#14 | #11と合わせてHumanが判断する |
+| HQ-056 | #15初版統合へ進めてよい条件をどう置くか | `docs/issue-14-validation-criteria.md`, GitHub Issue #15 | HumanまたはOrchestratorが未確認事項の残し方を判断する |
 
 ## 8. 参照すべき中核資料
 
