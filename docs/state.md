@@ -31,16 +31,16 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #2 前提台帳L2レビュー済み / Integration Ready / PR #19作成済み |
+| current_phase | #2 前提台帳Done / #3 L2開始判断前 |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
-| current_branch | codex/issue-2-prerequisite-ledger |
+| current_branch | main |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-006 |
-| last_decision_by | Human / Orchestrator |
-| next_target | PR #19を `pr_babysitter` で監視し、人間レビューまたはmerge判断を待つ |
-| resume_condition | 2026-07-01に#2前提台帳のR/B/P/Judgeレビューを完了し、PR #19を作成済み。Issue #2には `status: pr-ready` と `integration-ready` を付与済み |
-| resume_owner | pr_babysitter / Human |
+| current_run_id | LOG-007 |
+| last_decision_by | Human / GitHub |
+| next_target | #3 Why / 解決したい課題をL2で開始するかHuman / Orchestratorが判断する |
+| resume_condition | PR #19 merge済み。Issue #2はcompletedとしてclose済み、`integration-ready` と `status: done` 付与済み。次に対応可能なIssue候補は#3 |
+| resume_owner | Orchestrator / Human |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
 
@@ -58,6 +58,7 @@
 | D-008 | Humanが#2 前提台帳のL2開始を承認した | ユーザー発言「#2をL2で開始してOK」 | 2026-07-01 |
 | D-009 | #2 前提台帳はR/B/P/Judgeレビューを通し、構造化素材としてIntegration Readyと判定した。ただしHuman Check未解消事項は残す | `docs/issue-02-prerequisite-ledger.md`, `docs/loop-run.log.md` | 2026-07-01 |
 | D-010 | #2 前提台帳のPR #19を作成し、Issue #2に `status: pr-ready` と `integration-ready` を付与した | PR #19, GitHub Issue #2, `docs/loop-run.log.md` | 2026-07-01 |
+| D-011 | PR #19がmergeされ、Issue #2はcompletedとしてcloseされた。Issue #2の状態labelは `status: done` に更新済み | PR #19, GitHub Issue #2 | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -65,8 +66,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #2 L2レビュー済み / Integration Ready / PR #19作成済み | PR #19のレビュー結果を待つ | pr_babysitter / Human |
-| S-004 | PR handoff | PR #19 draft open | `pr_babysitter` でレビュー待ち、CI、差し戻し、merge待ちを監視する | pr_babysitter |
+| S-003 | 事業計画Issue実行 | #2 Done / #3未着手 | #3 Why / 解決したい課題をL2で開始するか判断する | Orchestrator / Human |
+| S-004 | PR handoff | open PRなし | open PRが作成されたら `pr_babysitter` へ渡す | Orchestrator |
 
 ## 7. Human Queue
 
@@ -75,7 +76,7 @@
 | HQ-002 | #2前提台帳のP-003〜P-008を決定事項として扱ってよいか | `docs/issue-02-prerequisite-ledger.md`, GitHub Issue #2 | Humanが承認または修正する |
 | HQ-003 | 事業目的、収益方針、実施方針の外部説明表現をどう扱うか | `docs/issue-02-prerequisite-ledger.md`, `docs/projects.md` | Humanが使用可能な表現を指定する |
 | HQ-004 | 法規制、衛生、安全、責任範囲の確認先と担当をどうするか | `docs/issue-02-prerequisite-ledger.md`, `docs/denylist.json` | Humanが確認先または判断担当を決める |
-| HQ-005 | PR #19のレビュー、draft解除、merge可否をどう判断するか | PR #19, `docs/issue-02-prerequisite-ledger.md`, `docs/pr-babysitter.md` | Humanがレビューまたはmerge方針を判断する |
+| HQ-005 | #3をL2で開始してよいか | GitHub Issue #3, `docs/issue-02-prerequisite-ledger.md`, `docs/levels.md` | Human / Orchestratorが#3開始可否を判断する |
 
 ## 8. 参照すべき中核資料
 
