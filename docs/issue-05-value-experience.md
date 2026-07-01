@@ -10,7 +10,7 @@
 | level | L2 |
 | created_at | 2026-07-01 |
 | created_by | Orchestrator / Creation-Implementation |
-| status | レビュー済み。Integration Ready（構造化素材として）/ PR #24作成済み |
+| status | 完了。Integration Ready（構造化素材として）/ PR #24 merge済み |
 | user_approval | 2026-07-01にユーザーがPR作成までの進行を基本承認。PR #23 merge後、Orchestratorが次候補#5 Whatを採用 |
 
 この文書は、駄菓子事業計画書初版のBP-05へ統合する前のWhat素材である。提供価値の優先順位、外部説明表現、成功基準を確定する文書ではない。
@@ -163,8 +163,8 @@
 |---|---|
 | reviewed_at | 2026-07-01 |
 | result | Integration Ready（構造化素材として） |
-| pr_status | PR #24 draft open |
-| done_status | 未完了。mergeまたは完了判断は人間が行う |
+| pr_status | PR #24 merge済み |
+| done_status | 完了。Issue #5はGitHub上でcompletedとしてclose済み。`integration-ready` と `status: done` を付与済み |
 
 ### Red Team指摘
 
@@ -202,15 +202,17 @@
 | Human Check分離 | Pass | 価値優先順位、外部説明、体験価値と収益のバランス、記録範囲、成功基準をHuman Checkへ送っている |
 | denylist | Pass for L2 / Fail for L3 | 提供価値、子どもの観察、外部説明表現、実証検証に触れるためL3不可。L2成果物としては確定判断を避けている |
 | Integration Ready | Pass | BP-05/BP-08/BP-13へ渡せる構造化素材として統合可能 |
-| PR Ready | Pass | PR #24作成済み。実差分denylist確認と未コミット変更の分離確認済み |
+| PR Ready | Merged to main | PR #24はmainへmerge済み。Issue #5はcompleted close済み |
 
 ### PR Handoff
 
 - branch: `codex/issue-5-what-l2`
 - pr_url: https://github.com/harukishimo/dagashi_jigyo/pull/24
+- merge_commit: `5e4ea2a261ea20e5a2867b5b140a7676f4f34134`
 - pr_title: `[codex] #5 What素材を追加`
 - PR本文に含めるべき内容: ステークホルダー別価値仮説、観察項目、否定条件、体験事業要素、Human Check、L3不可理由。
 - PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認済み。
-- GitHub Issue更新: Issue #5に `integration-ready` と `status: pr-ready` を付与し、PR #24への引き継ぎコメントを追加済み。
+- GitHub Issue更新: Issue #5に `integration-ready` と `status: done` を付与し、completedとしてclose済み。
 - issue_comment: https://github.com/harukishimo/dagashi_jigyo/issues/5#issuecomment-4850450265
-- 次の扱い: PR #24のmerge判断は人間に委ねる。merge後にIssue #5をcompleted closeする。
+- done_comment: https://github.com/harukishimo/dagashi_jigyo/issues/5#issuecomment-4850495858
+- 次の扱い: #5は完了。後続は#6 Howで、実施形態、場所条件、当日フロー、必要物、運営人数、制約条件を扱う。
