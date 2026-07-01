@@ -10,7 +10,7 @@
 | level | L2 |
 | created_at | 2026-07-01 |
 | created_by | Orchestrator / Creation-Implementation |
-| status | レビュー済み。Integration Ready（構造化素材として）/ PR #25作成済み |
+| status | 完了。Integration Ready（構造化素材として）/ PR #25 merge済み |
 | user_approval | 2026-07-01にユーザーがPR作成までの進行を基本承認。PR #24 merge後、Orchestratorが次候補#6 Howを採用 |
 
 この文書は、駄菓子事業計画書初版のBP-06へ統合する前のHow素材である。実施場所、日程、頻度、施設合意、安全・衛生、責任範囲を確定する文書ではない。
@@ -192,8 +192,8 @@
 |---|---|
 | reviewed_at | 2026-07-01 |
 | result | Integration Ready（構造化素材として） |
-| pr_status | PR #25 draft open |
-| done_status | 未完了。mergeまたは完了判断は人間が行う |
+| pr_status | PR #25 merge済み |
+| done_status | 完了。Issue #6はGitHub上でcompletedとしてclose済み。`integration-ready` と `status: done` を付与済み |
 
 ### Red Team指摘
 
@@ -231,15 +231,17 @@
 | Human Check分離 | Pass | 場所、頻度、規模、施設承認、安全・衛生、責任範囲、現金管理、記録範囲をHuman Checkへ送っている |
 | denylist | Pass for L2 / Fail for L3 | 実施形態、施設、子どもの安全、食品衛生、責任範囲に触れるためL3不可。L2成果物としては確定判断を避けている |
 | Integration Ready | Pass | BP-06/BP-09/BP-10/BP-13へ渡せる構造化素材として統合可能 |
-| PR Ready | Pass | PR #25作成済み。実差分denylist確認と未コミット変更の分離確認済み |
+| PR Ready | Merged to main | PR #25はmainへmerge済み。Issue #6はcompleted close済み |
 
 ### PR Handoff
 
 - branch: `codex/issue-6-how-l2`
 - pr_url: https://github.com/harukishimo/dagashi_jigyo/pull/25
+- merge_commit: `05e30891d47b0d88a932dcdb2aa5db0e4d331db6`
 - pr_title: `[codex] #6 How素材を追加`
 - PR本文に含めるべき内容: 実施形態比較、運営モデルv0、当日フロー、必要物、未確定条件、Human Check、L3不可理由。
 - PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認済み。
-- GitHub Issue更新: Issue #6に `integration-ready` と `status: pr-ready` を付与し、PR #25への引き継ぎコメントを追加済み。
+- GitHub Issue更新: Issue #6に `integration-ready` と `status: done` を付与し、completedとしてclose済み。
 - issue_comment: https://github.com/harukishimo/dagashi_jigyo/issues/6#issuecomment-4850545981
-- 次の扱い: PR #25のmerge判断は人間に委ねる。merge後にIssue #6をcompleted closeする。
+- done_comment: https://github.com/harukishimo/dagashi_jigyo/issues/6#issuecomment-4850568567
+- 次の扱い: #6は完了。後続は#7 事業環境・利用者・代替手段で、代替手段、参考事例、利用者ニーズ仮説、環境制約を扱う。
