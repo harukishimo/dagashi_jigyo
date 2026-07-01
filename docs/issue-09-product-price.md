@@ -10,7 +10,7 @@
 | level | L2 |
 | created_at | 2026-07-01 |
 | created_by | Orchestrator / Creation-Implementation |
-| status | レビュー済み。Integration Ready（構造化素材として）/ PR未作成 |
+| status | レビュー済み。Integration Ready（構造化素材として）/ PR #28作成済み |
 | user_approval | 2026-07-01にユーザーがPR作成までの進行を基本承認。PR #27 merge後、Orchestratorが次候補#9を採用 |
 
 この文書は、駄菓子事業計画書初版のBP-07へ統合する前の商品・価格素材である。商品ラインナップ、仕入れ先、販売価格、食品表示、アレルギー対応、衛生対応、実費回収方針を確定する文書ではない。
@@ -210,7 +210,7 @@
 |---|---|
 | reviewed_at | 2026-07-01 |
 | result | Integration Ready（構造化素材として） |
-| pr_status | PR未作成 |
+| pr_status | PR #28 draft open |
 | done_status | 未完了。PR作成、merge、Issue完了判断は後続 |
 
 ### Red Team指摘
@@ -249,14 +249,15 @@
 | Human Check分離 | Pass | 商品範囲、価格、実費回収、食品表示、アレルギー、保管、仕入れ、現金管理をHuman Checkへ送っている |
 | denylist | Pass for L2 / Fail for L3 | 商品構成、価格、収支、食品衛生、現金管理に触れるためL3不可。L2成果物としては確定判断を避けている |
 | Integration Ready | Pass | BP-07/BP-10/BP-11/BP-13へ渡せる構造化素材として統合可能 |
-| PR Ready | 未実施 | PR作成前に実差分denylist確認と未コミット変更の分離確認を行う |
+| PR Ready | Pass | PR #28作成済み。実差分denylist確認と未コミット変更の分離確認済み |
 
 ### PR Handoff
 
 - branch: `codex/issue-9-product-price-l2`
-- pr_url: 未作成
-- pr_title候補: `[codex] #9 商品・価格仮説素材を追加`
+- pr_url: https://github.com/harukishimo/dagashi_jigyo/pull/28
+- pr_title: `[codex] #9 商品・価格仮説素材を追加`
 - PR本文に含めるべき内容: 商品カテゴリ仮説、価格帯仮説、原価・実費回収の計算枠、安全・衛生・アレルギー要調査、現金管理論点、Human Check、L3不可理由。
 - PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認する。
-- GitHub Issue更新: 未実施。PR作成後にIssue #9へ `integration-ready` と `status: pr-ready` を付与する。
-- 次の扱い: #9をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う。
+- GitHub Issue更新: Issue #9に `integration-ready` と `status: pr-ready` を付与し、PR #28への引き継ぎコメントを追加済み。
+- issue_comment: https://github.com/harukishimo/dagashi_jigyo/issues/9#issuecomment-4850956324
+- 次の扱い: PR #28のmerge判断は人間に委ねる。merge後にIssue #9をcompleted closeする。
