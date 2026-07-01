@@ -31,16 +31,16 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #5 What素材L2レビュー済み / Integration Ready / PR #24 draft open |
+| current_phase | #6 How素材L2レビュー済み / Integration Ready / PR未作成 |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
-| current_branch | codex/issue-5-what-l2 |
+| current_branch | codex/issue-6-how-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-017 |
+| current_run_id | LOG-019 |
 | last_decision_by | Human / Orchestrator |
-| next_target | PR #24をpr_babysitterで監視する。merge後にIssue #5をcompleted closeし、次候補#6 HowのL2開始可否を判断する |
-| resume_condition | PR #23はmainへmerge済み。Issue #4はcompleted close済み。#5 What素材はPR #24としてdraft open。Issue #5に `integration-ready` と `status: pr-ready` を付与済み。PR #24のmerge判断は人間に委ねる |
-| resume_owner | pr_babysitter / Human |
+| next_target | #6をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う |
+| resume_condition | PR #24はmainへmerge済み。Issue #5はcompleted close済み、`integration-ready` と `status: done` 付与済み。#6 How素材を作成し、構造化素材としてIntegration Ready判定済み |
+| resume_owner | Orchestrator |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
 
@@ -70,6 +70,8 @@
 | D-020 | PR #23がmainへmergeされ、Issue #4はcompletedとしてcloseされた。Issue #4の状態labelは `status: done` に更新済み | PR #23, GitHub Issue #4 | 2026-07-01 |
 | D-021 | #5 What素材はR/B/P/Judgeレビューを通し、BP-05/BP-08/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし価値優先順位、外部説明表現、成功基準、子どもの記録方法はHuman Checkに残す | `docs/issue-05-value-experience.md`, `docs/loop-run.log.md` | 2026-07-01 |
 | D-022 | #5 What素材のdraft PR #24を作成し、Issue #5に `integration-ready` と `status: pr-ready` を付与した。Issue #5はPR merge後までopenのままにする | PR #24, GitHub Issue #5 | 2026-07-01 |
+| D-023 | PR #24がmainへmergeされ、Issue #5はcompletedとしてcloseされた。Issue #5の状態labelは `status: done` に更新済み | PR #24, GitHub Issue #5 | 2026-07-01 |
+| D-024 | #6 How素材はR/B/P/Judgeレビューを通し、BP-06/BP-09/BP-10/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし実施場所、頻度、規模、施設承認、安全・衛生、責任範囲、現金管理はHuman Checkに残す | `docs/issue-06-implementation-model.md`, `docs/loop-run.log.md` | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -77,8 +79,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #5 L2レビュー済み / Integration Ready / PR #24 draft open | PR #24のmerge後にIssue #5をcompleted closeする | pr_babysitter / Human |
-| S-004 | PR handoff | PR #24 draft open | PR #24を `pr_babysitter` で監視し、merge後に#6 HowのL2開始可否を判断する | pr_babysitter |
+| S-003 | 事業計画Issue実行 | #6 L2レビュー済み / Integration Ready / PR未作成 | #6をPR化する | Orchestrator |
+| S-004 | PR handoff | open PRなし | #6 PR作成後に `pr_babysitter` へ渡す | Orchestrator |
 
 ## 7. Human Queue
 
@@ -95,6 +97,9 @@
 | HQ-010 | 事業として重視する価値の優先順位をどう置くか | `docs/issue-05-value-experience.md`, GitHub Issue #5 | Humanが主価値を指定する、または#14で検証優先度を仮説化する |
 | HQ-011 | 外部説明で「金銭感覚」「教育」「地域貢献」「思い出づくり」をどこまで使ってよいか | `docs/issue-05-value-experience.md`, `docs/issue-03-why-problem.md` | Humanが使用可能表現を指定する |
 | HQ-012 | 子どもの行動・発言をどの範囲で記録してよいか | `docs/issue-05-value-experience.md`, GitHub Issue #13 | 写真、個人情報、同意、記録様式を#13で整理する |
+| HQ-013 | 初回実証で検討してよい場所候補、施設候補、利用可能スペースをどう置くか | `docs/issue-06-implementation-model.md`, GitHub Issue #6/#12 | Humanが候補条件を指定する、または#8/#12で仮説化する |
+| HQ-014 | 実施頻度、時間帯、規模、商品数の上限をどう置くか | `docs/issue-06-implementation-model.md`, GitHub Issue #8/#9/#14 | #8/#9/#14で検証条件へ落とす |
+| HQ-015 | 施設承認、安全・衛生、責任分界、現金管理、記録範囲をどう確認するか | `docs/issue-06-implementation-model.md`, `docs/denylist.json`, GitHub Issue #10/#13 | #10/#13で確認先と運用仮説を整理する |
 
 ## 8. 参照すべき中核資料
 
