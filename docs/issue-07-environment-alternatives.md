@@ -10,7 +10,7 @@
 | level | L2 |
 | created_at | 2026-07-01 |
 | created_by | Orchestrator / Creation-Implementation |
-| status | レビュー済み。Integration Ready（構造化素材として）/ PR未作成 |
+| status | レビュー済み。Integration Ready（構造化素材として）/ PR #26作成済み |
 | user_approval | 2026-07-01にユーザーがPR作成までの進行を基本承認。PR #25 merge後、Orchestratorが次候補#7を採用 |
 
 この文書は、駄菓子事業計画書初版のBP-02/BP-04/BP-05へ統合する前の事業環境・代替手段素材である。市場規模、利用者ニーズ、参考事例の有効性を確定する文書ではない。
@@ -172,7 +172,7 @@
 |---|---|
 | reviewed_at | 2026-07-01 |
 | result | Integration Ready（構造化素材として） |
-| pr_status | PR未作成 |
+| pr_status | PR #26 draft open |
 | done_status | 未完了。PR作成、merge、Issue完了判断は後続 |
 
 ### Red Team指摘
@@ -211,14 +211,15 @@
 | Human Check分離 | Pass | 対象地域、施設タイプ、参考事例使用範囲、外部情報解釈、利用者ニーズ検証、衛生・安全確認をHuman Checkへ送っている |
 | denylist | Pass for L2 / Fail for L3 | 事業判断、利用者ニーズ、子ども・施設、食品衛生、安全、外部副作用に触れるためL3不可。L2成果物としては確定判断を避けている |
 | Integration Ready | Pass | BP-02/BP-04/BP-05/BP-13へ渡せる構造化素材として統合可能 |
-| PR Ready | Pending | PR未作成。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う |
+| PR Ready | Pass | PR #26作成済み。実差分denylist確認と未コミット変更の分離確認済み |
 
 ### PR Handoff
 
 - branch: `codex/issue-7-environment-l2`
-- pr_url: 未作成
-- pr_title候補: `[codex] #7 事業環境・代替手段素材を追加`
+- pr_url: https://github.com/harukishimo/dagashi_jigyo/pull/26
+- pr_title: `[codex] #7 事業環境・代替手段素材を追加`
 - PR本文に含めるべき内容: 代替手段分析、参考事例と適用可能性、利用者ニーズ仮説、外部公式情報の限定利用、Human Check、L3不可理由。
-- PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認する。
-- GitHub Issue更新: PR作成後にIssue #7へ `integration-ready` と `status: pr-ready` を付与し、PRへの引き継ぎコメントを追加する。
-- 次の扱い: #7をPR化する。PR作成前に実差分denylist確認と未コミット変更の分離確認を行う。
+- PR作成前確認: `docs/denylist.json` の実差分再確認、既存の未コミット変更を巻き込まないことを確認済み。
+- GitHub Issue更新: Issue #7に `integration-ready` と `status: pr-ready` を付与し、PR #26への引き継ぎコメントを追加済み。
+- issue_comment: https://github.com/harukishimo/dagashi_jigyo/issues/7#issuecomment-4850624355
+- 次の扱い: PR #26のmerge判断は人間に委ねる。merge後にIssue #7をcompleted closeする。
