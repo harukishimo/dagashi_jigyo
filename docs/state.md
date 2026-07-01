@@ -31,15 +31,15 @@
 | 項目 | 内容 |
 |---|---|
 | project_goal | 駄菓子事業計画書初版を作成する |
-| current_phase | #9 商品・価格仮説素材L2レビュー済み / Integration Ready / PR #28 draft open |
+| current_phase | #10 運営オペレーション素材L2レビュー済み / Integration Ready / PR #29 draft open |
 | active_loop_patterns | `daily_triage`, `pr_babysitter` |
-| current_branch | codex/issue-9-product-price-l2 |
+| current_branch | codex/issue-10-operations-l2 |
 | github_repo | `git@github.com:harukishimo/dagashi_jigyo.git` |
 | current_control_stage | none |
-| current_run_id | LOG-029 |
+| current_run_id | LOG-032 |
 | last_decision_by | Human / Orchestrator |
-| next_target | PR #28をpr_babysitterで監視する。merge後にIssue #9をcompleted closeし、次候補#10 運営オペレーションのL2開始可否を判断する |
-| resume_condition | PR #27はmainへmerge済み。Issue #8はcompleted close済み。#9 商品・価格仮説素材はPR #28としてdraft open。Issue #9に `integration-ready` と `status: pr-ready` を付与済み。PR #28のmerge判断は人間に委ねる |
+| next_target | PR #29をpr_babysitterで監視する。merge後にIssue #10をcompleted closeし、次候補#11 収益・費用のL2開始可否を判断する |
+| resume_condition | PR #28はmainへmerge済み。Issue #9はcompleted close済み。#10 運営オペレーション素材はPR #29としてdraft open。Issue #10に `integration-ready` と `status: pr-ready` を付与済み。PR #29のmerge判断は人間に委ねる |
 | resume_owner | pr_babysitter / Human |
 | last_updated | 2026-07-01 |
 | updated_by | Orchestrator |
@@ -82,6 +82,9 @@
 | D-032 | PR #27がmainへmergeされ、Issue #8はcompletedとしてcloseされた。Issue #8の状態labelは `status: done` に更新済み | PR #27, GitHub Issue #8 | 2026-07-01 |
 | D-033 | #9 商品・価格仮説素材はR/B/P/Judgeレビューを通し、BP-07/BP-10/BP-11/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし商品範囲、価格、実費回収、食品表示、アレルギー、保管、仕入れ、現金管理はHuman Checkに残す | `docs/issue-09-product-price.md`, `docs/loop-run.log.md` | 2026-07-01 |
 | D-034 | #9 商品・価格仮説素材のdraft PR #28を作成し、Issue #9に `integration-ready` と `status: pr-ready` を付与した。Issue #9はPR merge後までopenのままにする | PR #28, GitHub Issue #9 | 2026-07-01 |
+| D-035 | PR #28がmainへmergeされ、Issue #9はcompletedとしてcloseされた。Issue #9の状態labelは `status: done` に更新済み | PR #28, GitHub Issue #9 | 2026-07-01 |
+| D-036 | #10 運営オペレーション素材はR/B/P/Judgeレビューを通し、BP-09/BP-10/BP-13へ渡せる構造化素材としてIntegration Readyと判定した。ただし運営責任者、当日担当、施設協力、事故対応、保険、責任分界、現金管理、食品衛生、記録範囲はHuman Checkに残す | `docs/issue-10-operations-sop.md`, `docs/loop-run.log.md` | 2026-07-01 |
+| D-037 | #10 運営オペレーション素材のdraft PR #29を作成し、Issue #10に `integration-ready` と `status: pr-ready` を付与した。Issue #10はPR merge後までopenのままにする | PR #29, GitHub Issue #10 | 2026-07-01 |
 
 ## 6. 現在の未完了事項
 
@@ -89,8 +92,8 @@
 |---|---|---|---|---|
 | S-001 | Loop運用資料 | 整備済み | 必要に応じて運用しながら更新する | Orchestrator |
 | S-002 | GitHub Issue品質改善 | 完了 | 更新済みIssueを起点に実行開始可否を判断する | Human / Orchestrator |
-| S-003 | 事業計画Issue実行 | #9 L2レビュー済み / Integration Ready / PR #28 draft open | PR #28のmerge後にIssue #9をcompleted closeする | pr_babysitter / Human |
-| S-004 | PR handoff | PR #28 draft open | PR #28を `pr_babysitter` で監視し、merge後に#10 運営オペレーションのL2開始可否を判断する | pr_babysitter |
+| S-003 | 事業計画Issue実行 | #10 L2レビュー済み / Integration Ready / PR #29 draft open | PR #29のmerge後にIssue #10をcompleted closeする | pr_babysitter / Human |
+| S-004 | PR handoff | PR #29 draft open | PR #29を `pr_babysitter` で監視し、merge後に#11 収益・費用のL2開始可否を判断する | pr_babysitter |
 
 ## 7. Human Queue
 
@@ -122,6 +125,11 @@
 | HQ-025 | 実費回収に含める費用範囲、赤字許容、寄付、施設負担をどう扱うか | `docs/issue-09-product-price.md`, GitHub Issue #11 | #11で収支仮説を作りHumanが判断する |
 | HQ-026 | 食品表示、アレルギー、賞味期限、保管、個包装、開封・詰め替えをどう確認するか | `docs/issue-09-product-price.md`, GitHub Issue #13 | #13で確認先、確認方法、判断担当を決める |
 | HQ-027 | 現金管理、釣り銭、売上記録、差異時対応をどう運用するか | `docs/issue-09-product-price.md`, GitHub Issue #10/#11 | #10でSOPと役割分担、#11で収支記録へ接続する |
+| HQ-028 | 運営責任者、当日の担当者、役割分担、兼務可否をどう置くか | `docs/issue-10-operations-sop.md`, GitHub Issue #10 | Humanが候補者または役割設計を指定する |
+| HQ-029 | 施設側の承認者、現場担当者、協力範囲、停止指示経路をどう確認するか | `docs/issue-10-operations-sop.md`, GitHub Issue #12 | #12で説明ポイントと確認質問を整理する |
+| HQ-030 | 事故対応、保険、責任分界、緊急連絡、停止権限をどう扱うか | `docs/issue-10-operations-sop.md`, GitHub Issue #13 | #13で確認先と運用仮説を整理する |
+| HQ-031 | 現金管理、釣り銭、売上記録、差異時対応、会計責任をどう扱うか | `docs/issue-10-operations-sop.md`, GitHub Issue #11/#13 | #11で収支、#13で金銭リスクを整理する |
+| HQ-032 | 保護者説明、同意、写真、個人情報、発話記録、記録保管をどう扱うか | `docs/issue-10-operations-sop.md`, GitHub Issue #13/#14 | #13/#14で記録方法と同意範囲を整理する |
 
 ## 8. 参照すべき中核資料
 
