@@ -390,6 +390,7 @@ Purple Team判断:
 - merge_commit: `cc5a2f570f3a082a5c0d17af3acd696a32de6297`
 - main_handoff_pr: PR #20 `https://github.com/harukishimo/dagashi_jigyo/pull/20`
 - main_handoff_pr_state: draft open / base `main` / head `codex/issue-2-prerequisite-ledger`
+- main_handoff_pr_metadata_update: PR #20のtitle/bodyを、#2 merge確認と#3 Why素材main反映の両方を含む内容へ更新済み
 - checks_state: unknown
 - review_state: human merged
 - merge_conflict: none observed for PR #21 merge into stack branch
